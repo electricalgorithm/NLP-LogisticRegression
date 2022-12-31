@@ -165,8 +165,6 @@ class LGCalculator:
         test_predictions = blg.predict(test_dataset.features)
         test_error = blg.compute_error(test_predictions, test_dataset.labels)
 
-        blg.calculate_cross_entropy_error(test_predictions, test_dataset.labels)
-
         # Write the metrics to the output file.
         ErrorWriter(settings["model_options"]["metrics_output"]).write(
             train_error, test_error
@@ -215,3 +213,4 @@ class LGCalculator:
 
 if __name__ == "__main__":
     LGCalculator.main()
+
